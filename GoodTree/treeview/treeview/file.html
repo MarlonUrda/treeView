@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Treeview</title>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <tree-view></tree-view>
+
+    <template id="tree-view-template">
+      <style>
+        /* Style for all nodes */
+        li {
+          padding: 5px;
+          border-radius: 5px;
+          margin-bottom: 2px;
+          background-color: #f0f0f0;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s;
+          font-family: Arial, sans-serif;
+        }
+
+        li:hover {
+          background-color: #e0e0f0;
+        }
+
+        /* Style for collapsed nodes */
+        .collapsed > ul {
+          display: none;
+        }
+        .collapsed > i:before {
+          content: "►";
+        }
+
+        /* Style for expanded nodes */
+        .expanded > ul {
+          display: block;
+          margin-left: 15px;
+          margin-top: 8px;
+        }
+        .expanded > i:before {
+          content: "▼";
+        }
+
+        /* Style for checkboxes */
+        input[type="checkbox"] {
+          margin-right: 5px;
+          transform: scale(1.25);
+        }
+      </style>
+      <ul id="tree-root"></ul>
+    </template>
+  </body>
+</html>
